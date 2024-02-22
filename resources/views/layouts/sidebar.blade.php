@@ -21,25 +21,24 @@
               <span class="link-title">Dashboard</span>
             </a>
           </li>
+          <li class="nav-item nav-category">Keluar Barang</li>
           <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#keluarbarangs" role="button" aria-expanded="false" aria-controls="keluarabarang">
+            <a href="{{route('kembali.barang')}}" class="nav-link">
               <i class="link-icon" data-feather="archive"></i>
-              <span class="link-title">Keluar Barang</span>
-              <i class="link-arrow" data-feather="chevron-down"></i>
+              <span class="link-title">Pengembalian Barang</span>
             </a>
-            <div class="collapse" id="keluarbarangs">
-              <ul class="nav sub-menu">
-                <li class="nav-item">
-                  <a href="{{route('kembali.barang')}}" class="nav-link">Pengembalian Barang</a>
-                </li>
-                <li class="nav-item">
-                  <a href="{{route('pinjam.barang')}}" class="nav-link">Peminjaman Barang</a>
-                </li>
-                <li class="nav-item">
-                  <a href="{{route('ambil.barang')}}" class="nav-link">Pengambilan Barang</a>
-                </li>
-              </ul>
-            </div>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('pinjam.barang')}}" class="nav-link">
+              <i class="link-icon" data-feather="inbox"></i>
+              <span class="link-title">Peminjaman Barang</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('ambil.barang')}}" class="nav-link">
+              <i class="link-icon" data-feather="package"></i>
+              <span class="link-title">Pengambilan Barang</span>
+            </a>
           </li>
         </ul>
       </div>
