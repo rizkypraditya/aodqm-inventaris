@@ -10,7 +10,8 @@ use App\Models\KeluarBarang;
 
 class PeminjamanBarang extends Model
 {
-  
+
+  public $table = "nadya_peminjaman_barangs";
   protected $guarded = [];
   
   public function barang ()

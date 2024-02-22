@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'nadya_users',
     ],
 
     /*
@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'nadya_users',
         ],
     ],
 
@@ -60,7 +60,7 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'nadya_users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
@@ -91,8 +91,8 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'nadya_users' => [
+            'provider' => 'nadya_users',
             'table' => 'password_reset_tokens',
             'expire' => 60,
             'throttle' => 60,

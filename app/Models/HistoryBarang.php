@@ -9,6 +9,7 @@ class HistoryBarang extends Model
 {
     use HasFactory;
     
+    public $table = "nadya_history_barangs";
     protected $guarded = [];
     
     public function barang()

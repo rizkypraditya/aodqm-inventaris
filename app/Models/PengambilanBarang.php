@@ -9,6 +9,7 @@ use App\Models\Barang;
 class PengambilanBarang extends Model
 {
     use HasFactory;
+    public $table = "nadya_pengambilan_barangs";
     protected $guarded = [];
   
     public function barang ()
