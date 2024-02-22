@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tambah_barangs', function (Blueprint $table) {
+        Schema::create('nadya_tambah_barangs', function (Blueprint $table) {
           $table->id();
           $table->unsignedBigInteger('barang_id');
-          $table->foreign('barang_id')->references('id')->on('barangs');
+          $table->foreign('barang_id')->references('id')->on('nadya_barangs');
           $table->string('jumlah_tambah');
           $table->string('tanggal_tambah');
           $table->string('resi_pengiriman')->nullable();
