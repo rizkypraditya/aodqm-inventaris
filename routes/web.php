@@ -82,11 +82,7 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('create/pinjam/barang' , 'CreatePinjamBarang')->name('create.pinjam.barang');
     Route::post('store/pinjam/barang' , 'StorePinjamBarang')->name('store.pinjam.barang');
     Route::get('view/pinjam/barang/{id}' , 'ViewPinjamBarang')->name('view.pinjam.barang');
-    Route::get('edit/pinjam/barang/{id}', 'EditPinjamBarang')->name('edit.pinjam.barang');
     Route::get('delete/pinjam/barang/{id}' , 'DeletePinjamBarang')->name('delete.pinjam.barang');
-    Route::post('update/pinjam/barang' , 'UpdatePinjamBarang')->name('update.pinjam.barang');
-    Route::get('filter/pinjam/barang', 'filterPeminjaman')->name('filter.pinjam.barang');
-
   });
 
   Route::controller(PengambilanBarangController::class)->group(function(){
@@ -187,7 +183,7 @@ Route::controller(TambahBarangController::class)->group(function(){
   Route::post('/admin/storetambah' , 'StoreTambahBarang')->name('store.tambah');
   Route::get('/admin/viewtambah/{id}' , 'ViewTambahBarang')->name('view.tambah');
   Route::get('/admin/edittambah/{id}' , 'EditTambahBarang')->name('edit.tambah');
-  // Route::post('/admin/updatetambah/{id}' , 'UpdateTambahBarang')->name('update.tambah');
+  Route::post('/admin/updatetambah/' , 'UpdateTambah')->name('update.tambah');
   Route::get('/admin/deletetambah/{id}' , 'DeleteTambahBarang')->name('delete.tambah');
 });
 

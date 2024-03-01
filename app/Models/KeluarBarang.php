@@ -15,8 +15,4 @@ class KeluarBarang extends Model
       return $this->belongsTo(Barang::class);
     }
 
-    public function peminjamanBarang ()
-    {
-      return $this->belongsTo(PeminjamanBarang::class);
-    }
 }

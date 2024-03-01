@@ -13,23 +13,23 @@ class Barang extends Model
 
     public function masukbarang()
     {
-        return $this->belongsTo(MasukBarang::class);
+        return $this->hasMany(MasukBarang::class);
     }
 
     public function peminjaman ()
     {
-      return $this->belongsTo(PeminjamanBarang::class);
+      return $this->hasMany(PeminjamanBarang::class);
     }
     public function pengembalian ()
     {
-      return $this->belongsTo(PengembalianBarang::class);
+      return $this->hasMany(PengembalianBarang::class);
     }
     public function pengambilan ()
     {
-      return $this->belongsTo(PengambilanBarang::class);
+      return $this->hasMany(PengambilanBarang::class);
     }
     public function tambah ()
     {
-      return $this->belongsTo(TambahBarang::class);
+      return $this->hasMany(TambahBarang::class);
     }
 }

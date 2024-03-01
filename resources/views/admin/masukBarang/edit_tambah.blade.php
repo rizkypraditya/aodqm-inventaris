@@ -7,14 +7,14 @@
 </div>
 <div class="row profile-body"> 
   <div class="col-md-12 col-xl-12 center-wrapper">
-    <div class="card rounded">
+    <div class="card rounded">  
       <div class="card-body">
         <div class="d-flex flex-row align-items-center justify-content-between mb-3">
           <h4>Edit Barang</h4>
         </div>
-        <form method="POST" action="" class="forms-sample" enctype="multipart/form-data" class="forms-sample">
+        <form method="POST" action="{{ route('update.tambah') }}" class="forms-sample" enctype="multipart/form-data" class="forms-sample">
         @csrf
-        <input type="hidden" name="id" value="{{ $tambahbarang->barang->id_barang }}">
+        <input type="hidden" name="id" value="{{ $tambahbarang->id }}">
 
           <div class="row mb-3">
             <label for="exampleInputUsername2" class="col-sm-3 col-form-label">Resi Pengiriman</label>
