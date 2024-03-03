@@ -4,6 +4,17 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\UsersExport;
+use Maatwebsite\Excel\Concerns\Exportable;
+use Maatwebsite\Excel\Concerns\WithCustomStartCell;
+use Maatwebsite\Excel\Concerns\WithCustomCsvSettings;
+use Maatwebsite\Excel\Concerns\WithCustomSheetName;
+use Maatwebsite\Excel\Concerns\WithHeadings;
+use Maatwebsite\Excel\Concerns\WithMapping;
+use Maatwebsite\Excel\Concerns\WithStrictNullComparison;
+use Maatwebsite\Excel\Concerns\WithEvents;
+use Maatwebsite\Excel\Events\AfterSheet;
 use App\Models\User;
 use App\Models\Barang;
 use App\Models\MasukBarang;
@@ -209,14 +220,9 @@ class AdminController extends Controller
 
     } //End Method
 
-
-    public function FilterListBarang(Request $request)
+  public function Userexport() 
   {
-    $barang = Barang::all();
-    $pinjambarang = PeminjamanBarang::all();
-    $ambilbarang = PengambilanBarang::all();
-
-    return view('admin.admin_list_barang', compact('barang', 'pinjambarang', 'ambilbarang'));
-  } //End Method
+    return Excel::download(new UsersExport, 'users.xlsx', \Maatwebsite\Excel\Excel::XLSX);
+  }
 } 
   

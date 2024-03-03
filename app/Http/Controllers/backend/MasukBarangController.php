@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\MasukBarang;
 use App\Models\Barang;
 use App\Models\TambahBarang;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\RegisterExport;
+use Maatwebsite\Excel\Concerns\WithHeadings;
+
+
 
 class MasukBarangController extends Controller
 {
@@ -150,7 +155,10 @@ class MasukBarangController extends Controller
     
         return redirect()->route('register.barang')->with($notification);
     }
-  
+    public function MasukBarangexport() 
+    {
+      return Excel::download(new RegisterExport, 'Masuk Barang.xlsx', \Maatwebsite\Excel\Excel::XLSX);
+    }
     
 
 }

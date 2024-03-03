@@ -151,6 +151,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
   ->name('view.list_barang');
   Route::get('/admin/filterlistbarang' , [AdminController::class, 'FilterListBarang'])
   ->name('filter.list_barang');
+
+  Route::get('users/export/', [AdminController::class, 'Userexport'])
+  ->name('users.export');
   
 
 }); //End group Admin Middleware
@@ -172,6 +175,7 @@ Route::controller(MasukBarangController::class)->group(function(){
     Route::get('/admin/editregister/{id}' , 'EditRegister')->name('edit.register');
     Route::post('/admin/updateregister/' , 'UpdateRegister')->name('update.register');
     Route::get('/admin/deleteregister/{id}' , 'DeleteRegister')->name('delete.register');
+    Route::get('masuk/barang/export/', 'MasukBarangexport')->name('masuk.barang.export');
 
   
 });// End Masuk Barang Group Route 

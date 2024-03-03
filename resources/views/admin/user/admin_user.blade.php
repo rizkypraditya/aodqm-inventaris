@@ -7,14 +7,19 @@
   <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <div class="d-flex flex-row align-items-center justify-content-between mb-3">
+        <div >
           <h4 class="mb-4">Users</h4>
+        </div>
+        <div class="d-flex flex-row align-items-center justify-content-between mb-4" >
+          <a href="{{ route('users.export') }}" type="button" class="btn btn-outline-primary btn-block btn-icon-text">
+            Export as Excel
+          </a>
           <a href="{{ route('add.user') }}" class="btn btn-outline-primary btn-icon-text">
             <i data-feather="plus" class="btn-icon-prepend"></i> Tambah 
           </a>
         </div>
-    
-        <div class="table-responsive">
+        
+        <div class="table-responsive mt-3">
           <table id="dataTableExample" class="table">
             <thead>
               <tr>
