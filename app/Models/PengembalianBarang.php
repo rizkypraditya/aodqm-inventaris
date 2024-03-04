@@ -14,7 +14,7 @@ class PengembalianBarang extends Model
   
     public function barang ()
     {
-      return $this->belongsTo(PeminjamanBarang::class);
+      return $this->belongsTo(PeminjamanBarang::class, 'barang_id');
     }
 
     public function masukbarang ()
@@ -24,6 +24,6 @@ class PengembalianBarang extends Model
 
     public function user ()
     {
-      return $this->belongsTo(User::class);
+      return $this->belongsTo(User::class, 'user_id');
     }
 }

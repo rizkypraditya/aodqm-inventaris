@@ -12,6 +12,7 @@
         </div>
         <div class="d-flex flex-row align-items-center justify-content-between mb-4" >
           <a href="{{ route('users.export') }}" type="button" class="btn btn-outline-primary btn-block btn-icon-text">
+          <i data-feather="file-text" class="btn-icon-prepend"></i>
             Export as Excel
           </a>
           <a href="{{ route('add.user') }}" class="btn btn-outline-primary btn-icon-text">

@@ -8,6 +8,9 @@ use App\Models\TambahBarang;
 use App\Models\MasukBarang;
 use Illuminate\Support\Facades\DB;
 use App\Models\Barang;
+use App\Exports\TambahExport;
+use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
 class TambahBarangController extends Controller
 {
@@ -134,6 +137,10 @@ class TambahBarangController extends Controller
       'alert-type' => 'success'
     );
     return redirect()->route('tambah.barang')->with($notification);
+  }
+  public function TambahBarangexport()
+  {
+    return Excel::download(new TambahExport, 'tambah barang.xlsx');
   }
 
 }

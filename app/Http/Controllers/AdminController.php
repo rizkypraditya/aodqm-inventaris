@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\UsersExport;
+use App\Exports\ListExport;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Maatwebsite\Excel\Concerns\WithCustomStartCell;
 use Maatwebsite\Excel\Concerns\WithCustomCsvSettings;
@@ -220,9 +221,17 @@ class AdminController extends Controller
 
     } //End Method
 
-  public function Userexport() 
-  {
-    return Excel::download(new UsersExport, 'users.xlsx', \Maatwebsite\Excel\Excel::XLSX);
-  }
+    public function Userexport() 
+    {
+      return Excel::download(new UsersExport, 'users.xlsx', \Maatwebsite\Excel\Excel::XLSX);
+    }
+    public function Listexport() 
+    {
+      $barang = Barang::all();
+      $pinjambarang = PeminjamanBarang::all();
+      $ambilbarang = PengambilanBarang::all();
+
+      return Excel::download(new ListExport($barang, $pinjambarang, $ambilbarang), 'list barang.xlsx', \Maatwebsite\Excel\Excel::XLSX);
+    }
 } 
   

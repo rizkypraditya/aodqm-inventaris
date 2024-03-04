@@ -10,7 +10,11 @@ use App\Models\PeminjamanBarang;
 use App\Models\PengambilanBarang;
 use App\Models\PengembalianBarang;
 use App\Models\Barang;
-
+use App\Exports\PeminjamanExport;
+use App\Exports\PengambilanExport;
+use App\Exports\PengembalianExport;
+use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
 class KeluarBarangController extends Controller
 {
@@ -25,8 +29,6 @@ class KeluarBarangController extends Controller
     return view('admin.keluarBarang.view_peminjaman', compact('pinjam'));
   }
   
-  
-
   public function AcceptRequest($id)
   {
       $peminjamanBarang = PeminjamanBarang::find($id);
@@ -253,6 +255,17 @@ public function AcceptKembali($id)
         return redirect()->back()->with($notification);
     }
   }
-
+  public function PeminjamanBarangexport()
+  {
+    return Excel::download(new PeminjamanExport, 'peminjaman barang.xlsx');
+  }
+  public function PengambilanBarangexport()
+  {
+    return Excel::download(new PengambilanExport, 'pengambilan barang.xlsx');
+  }
+  public function PengembalianBarangexport()
+  {
+    return Excel::download(new PengembalianExport, 'pengembalian barang.xlsx');
+  }
 
 }

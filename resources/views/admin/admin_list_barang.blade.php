@@ -9,6 +9,10 @@
         <div class="d-flex justify-content-between align-items-baseline mb-4">
           <h6 class="card-title mb-0">List Data Barang</h6>
         </div>
+        <a href="{{route('list.barang.export')}}" class="btn btn-outline-primary btn-icon-text mb-4">
+          <i data-feather="file-text" class="btn-icon-prepend"></i>
+          Export Excel
+        </a>
         <div class="table-responsive">
           <table id="dataTableExample" class="table table-hover mb-0">
             <thead>

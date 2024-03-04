@@ -10,6 +10,10 @@
         <div class="d-flex flex-row align-items-center justify-content-between mb-3">
           <h4 class="mb-3">Pengembalian Barang</h4>
         </div>
+        <a href="{{route('pengembalian.barang.export')}}" class="btn btn-outline-primary btn-icon-text mb-4">
+          <i data-feather="file-text" class="btn-icon-prepend"></i>
+          Export Excel
+        </a>
         <div class="table-responsive">
           <table id="dataTableExample" class="table">
             <thead>

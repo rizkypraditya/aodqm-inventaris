@@ -149,8 +149,8 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
   ->name('list.barang');
   Route::get('/admin/viewlistbarang/{id}' , [AdminController::class, 'ViewListBarang'])
   ->name('view.list_barang');
-  Route::get('/admin/filterlistbarang' , [AdminController::class, 'FilterListBarang'])
-  ->name('filter.list_barang');
+  Route::get('list/barang/export/', [AdminController::class, 'Listexport'])
+  ->name('list.barang.export');
 
   Route::get('users/export/', [AdminController::class, 'Userexport'])
   ->name('users.export');
@@ -189,6 +189,7 @@ Route::controller(TambahBarangController::class)->group(function(){
   Route::get('/admin/edittambah/{id}' , 'EditTambahBarang')->name('edit.tambah');
   Route::post('/admin/updatetambah/' , 'UpdateTambah')->name('update.tambah');
   Route::get('/admin/deletetambah/{id}' , 'DeleteTambahBarang')->name('delete.tambah');
+  Route::get('tambah/barang/export/', 'TambahBarangexport')->name('tambah.barang.export');
 });
 
 Route::controller(KeluarBarangController::class)->group(function(){
@@ -197,16 +198,20 @@ Route::controller(KeluarBarangController::class)->group(function(){
   Route::get('/admin/accept/kembali/{id}', 'AcceptKembali')->name('accept.kembali');
   Route::get('/admin/reject/kembali/{id}', 'RejectKembali')->name('reject.kembali');
   Route::get('/admin/view/pengembalian/{id}', 'ViewPengembalian')->name('view.pengembalian');
+  Route::get('peminjaman/barang/export/', 'PeminjamanBarangexport')->name('peminjaman.barang.export');
+  
 
   Route::get('/admin/pengambilanbarang' , 'PengambilanBarang')->name('pengambilan.barang');
   Route::get('/admin/accept/ambil/{id}', 'AcceptAmbil')->name('accept.ambil');
   Route::get('/admin/reject/ambil/{id}', 'RejectAmbil')->name('reject.ambil');
   Route::get('/admin/view/pengambilan/{id}', 'ViewPengambilan')->name('view.pengambilan');
+  Route::get('pengambilan/barang/export/', 'PengambilanBarangexport')->name('pengambilan.barang.export');
 
   Route::get('/admin/peminjamanbarang' , 'PeminjamanBarang')->name('peminjaman.barang');
   Route::get('/accept/request/{id}', 'AcceptRequest')->name('accept.request');
   Route::get('/reject/request/{id}', 'RejectRequest')->name('reject.request');
   Route::get('/view/peminjaman/{id}', 'ViewPeminjaman')->name('view.peminjaman');
+  Route::get('pengembalian/barang/export/', 'PengembalianBarangexport')->name('pengembalian.barang.export');
 });
 // End Keluar Barang Group Route
 
