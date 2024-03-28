@@ -8,7 +8,7 @@
       <div class="card-body">
         <div class="d-flex flex-row align-items-center justify-content-between mb-3">
           <h4 class="mb-4">Peminjaman Barang</h4>
-          <a href="{{route('create.pinjam.barang')}}" class="btn btn-outline-primary btn-icon-text">
+          <a href="{{route('create.pinjam')}}" class="btn btn-outline-primary btn-icon-text">
             <i data-feather="plus" class="btn-icon-prepend"></i> Tambah 
           </a>
         </div>
@@ -41,10 +41,10 @@
                       <label for="">Pending</label>
                   </span>
                 <td>
-                  <a href="{{route('view.pinjam.barang', ['id' => $item->id])}}" type="button" class="btn btn-primary btn-icon">
+                  <a href="{{route('view.pinjam', ['id' => $item->id])}}" type="button" class="btn btn-primary btn-icon">
                     <i data-feather="eye"></i>
                   </a>
-                  <a href="{{route ('delete.pinjam.barang', ['id' => $item->id]) }}" type="button" class="btn btn-danger btn-icon" id="delete">
+                  <a href="{{route ('delete.pinjam', ['id' => $item->id]) }}" type="button" class="btn btn-danger btn-icon" id="delete">
                     <i data-feather="trash-2"></i>
                   </a>
                 </td>
@@ -53,7 +53,7 @@
                     <label for="">Approved</label>
                   </span>
                   <td>
-                    <a href="{{route('view.pinjam.barang', ['id' => $item->id])}}" type="button" class="btn btn-primary btn-icon">
+                    <a href="{{route('view.pinjam', ['id' => $item->id])}}" type="button" class="btn btn-primary btn-icon">
                       <i data-feather="eye"></i>
                     </a>
                   </td>  
@@ -62,7 +62,7 @@
                     <label for="">Rejected</label>
                   </span>
                   <td>
-                    <a href="{{route('view.pinjam.barang', ['id' => $item->id])}}" type="button" class="btn btn-primary btn-icon">
+                    <a href="{{route('view.pinjam', ['id' => $item->id])}}" type="button" class="btn btn-primary btn-icon">
                       <i data-feather="eye"></i>
                     </a>
                   </td> 

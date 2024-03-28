@@ -73,7 +73,7 @@
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary me-2">Simpan</button>
-            <a href="{{ route('kembali.barang') }}" class="btn btn-outline-secondary">Batal</a>
+            <a href="{{ route('kembali.user') }}" class="btn btn-outline-secondary">Batal</a>
           </div>  
         </form>
       </div>     

@@ -4,7 +4,7 @@
 <nav class="sidebar">
       <div class="sidebar-header">
         <a href="#" class="sidebar-brand">
-          Masih<span>Mikir</span> 
+          TI<span>To</span> 
         </a>
         <div class="sidebar-toggler not-active">
           <span></span>
@@ -23,7 +23,7 @@
           </li>
           <li class="nav-item nav-category">Keluar Barang</li>
           <li class="nav-item">
-            <a href="{{route('kembali.barang')}}" class="nav-link">
+            <a href="{{route('kembali.user')}}" class="nav-link">
               <i class="link-icon" data-feather="archive"></i>
               <span class="link-title">Pengembalian Barang</span>
             </a>

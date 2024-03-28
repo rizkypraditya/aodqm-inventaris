@@ -13,7 +13,7 @@
           <h4>Peminjaman Barang</h4>
         </div>
         
-        <form method="POST" action="{{route('store.pinjam.barang')}}" class="forms-sample" enctype="multipart/form-data" class="forms-sample">
+        <form method="POST" action="{{route('store.pinjam')}}" class="forms-sample" enctype="multipart/form-data" class="forms-sample">
         @csrf
         <div class="form-group mb-3">
           <label for="id_barang">Barang</label>

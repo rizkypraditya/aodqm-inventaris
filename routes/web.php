@@ -71,35 +71,29 @@ Route::middleware(['auth', 'role:user'])->group(function () {
   Route::fallback(function () { 
     return view('404_page');
   });
-  
-}); //End group User Middleware
-
-Route::middleware(['auth', 'role:user'])->group(function () {
 
   Route::controller(PeminjamanBarangController::class)->group(function(){
 
-    Route::get('pinjam/barang' , 'PinjamBarang')->name('pinjam.barang');
-    Route::get('create/pinjam/barang' , 'CreatePinjamBarang')->name('create.pinjam.barang');
-    Route::post('store/pinjam/barang' , 'StorePinjamBarang')->name('store.pinjam.barang');
-    Route::get('view/pinjam/barang/{id}' , 'ViewPinjamBarang')->name('view.pinjam.barang');
-    Route::get('delete/pinjam/barang/{id}' , 'DeletePinjamBarang')->name('delete.pinjam.barang');
+    Route::get('/pinjam/barang' , 'PinjamBarang')->name('pinjam.barang');
+    Route::get('create/pinjam/barang' , 'CreatePinjamBarang')->name('create.pinjam');
+    Route::post('store/pinjam/barang' , 'StorePinjamBarang')->name('store.pinjam');
+    Route::get('view/pinjam/barang/{id}' , 'ViewPinjamBarang')->name('view.pinjam');
+    Route::get('delete/pinjam/barang/{id}' , 'DeletePinjamBarang')->name('delete.pinjam');
   });
 
   Route::controller(PengambilanBarangController::class)->group(function(){
 
-    Route::get('ambil/barang' , 'AmbilBarang')->name('ambil.barang');
+    Route::get('/ambil/barang' , 'AmbilBarang')->name('ambil.barang');
     Route::get('create/ambil/barang' , 'CreateAmbilBarang')->name('create.ambil.barang');
     Route::post('store/ambil/barang' , 'StoreAmbilBarang')->name('store.ambil.barang');
     Route::get('view/ambil/barang/{id}' , 'ViewAmbilBarang')->name('view.ambil.barang');
     Route::get('delete/ambil/barang/{id}' , 'DeleteAmbilBarang')->name('delete.ambil.barang');
-    Route::get('edit/ambil/barang/{id}', 'EditAmbilBarang')->name('edit.ambil.barang');
-    Route::post('update/ambil/barang' , 'UpdateAmbilBarang')->name('update.ambil.barang');
 
   });
 
   Route::controller(PengembalianBarangController::class)->group(function(){
 
-    Route::get('kembali/barang' , 'KembaliBarang')->name('kembali.barang');
+    Route::get('/kembali/barang' , 'KembaliBarang')->name('kembali.user');
     Route::get('create/kembali/barang' , 'CreateKembaliBarang')->name('create.kembali.barang');
     Route::post('store/kembali/barang' , 'StoreKembaliBarang')->name('store.kembali.barang');
     Route::get('view/kembali/barang/{id}' , 'ViewKembaliBarang')->name('view.kembali.barang');
@@ -107,9 +101,9 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 
   });
 
-  
 
-}); // End group Auth + Role User Middleware
+  
+}); //End group User Middleware
 
 
 // Admin Group Middleware
@@ -154,7 +148,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
   Route::get('users/export/', [AdminController::class, 'Userexport'])
   ->name('users.export');
-  
+
+  Route::get('/search/barang', [HistoryBarangController::class, 'Search'])
+  ->name('searchbarang');
+  Route::get('/admin/history', [HistoryBarangController::class, 'History'])
+  ->name('history');
 
 }); //End group Admin Middleware
 
@@ -200,7 +198,6 @@ Route::controller(KeluarBarangController::class)->group(function(){
   Route::get('/admin/view/pengembalian/{id}', 'ViewPengembalian')->name('view.pengembalian');
   Route::get('peminjaman/barang/export/', 'PeminjamanBarangexport')->name('peminjaman.barang.export');
   
-
   Route::get('/admin/pengambilanbarang' , 'PengambilanBarang')->name('pengambilan.barang');
   Route::get('/admin/accept/ambil/{id}', 'AcceptAmbil')->name('accept.ambil');
   Route::get('/admin/reject/ambil/{id}', 'RejectAmbil')->name('reject.ambil');
@@ -217,11 +214,6 @@ Route::controller(KeluarBarangController::class)->group(function(){
 
  
 
-Route::controller(HistoryBarangController::class)->group(function()
-{
-    Route::get('/search/barang', 'Search')->name('searchbarang');
-    Route::get('/admin/history' , 'History')->name('history');
-});
 
 
 }); //End group Admin Middleware
