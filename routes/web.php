@@ -27,10 +27,8 @@ use App\Http\Controllers\backend\TambahBarangController;
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/' , [AdminController::class, 'AdminLogin'])
+->name('admin.login');
  
 Route::get('/auth/{provider}/redirect', [ProviderController::class, 'redirect']);
 Route::get('/auth/{provider}/callback', [ProviderController::class,'callback']);
@@ -156,8 +154,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
 }); //End group Admin Middleware
 
-Route::get('/admin/login' , [AdminController::class, 'AdminLogin'])
-->name('admin.login');
+
 
 // Admin Group Middleware
 
