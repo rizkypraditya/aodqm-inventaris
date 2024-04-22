@@ -19,7 +19,7 @@
           <select name="id_barang" id="id" class="form-control">
             <option value="" selected disabled> -------Silahkan Pilih Barang------- </option>
               @foreach ($data as $barang)
-                @if ($barang->jumlah_pinjam != 0 && $barang->status == 'approved')
+                @if ($barang->jumlah_pinjam != 0 && $barang->status == 'approved' && $barang->user_id == Auth::user()->id)
                   <option value="{{ $barang->id }} " data-lokasi="{{ $barang->barang->lokasi_barang }}" data-jumlah="{{ $barang->jumlah_pinjam }}" data-serial="{{ $barang->barang->serial_number }}" data-id_barang="{{ $barang->barang->id_barang }}" data-nama="{{ $barang->barang->nama_barang }}">{{ $barang->barang->nama_barang }}</option>
                 @endif
               @endforeach

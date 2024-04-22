@@ -32,13 +32,9 @@ class PengembalianBarangController extends Controller
 
   public function DeleteKembaliBarang($id)
   {
-    $kembali = PengembalianBarang::find($id);
-    $kembali->delete();
-    $notification = array(
-      'message' => 'Data Pengembalian Berhasil Dihapus',
-      'alert-type' => 'success'
-  );
-    return redirect()->route('kembali.barang')->with($notification);
+      $kembali = PengembalianBarang::find($id);
+      $kembali->delete();
+      return redirect()->back()->with('success', 'Data Berhasil Dihapus');
   }// End Method
 
   public function StoreKembaliBarang(Request $request)
@@ -80,7 +76,7 @@ $notification = array(
   'alert-type' => 'success'
 );
 
-return redirect()->route('kembali.barang')->with($notification);
+return redirect()->route('kembali.user')->with($notification);
   } //End Method
      
 }

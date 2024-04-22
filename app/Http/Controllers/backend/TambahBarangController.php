@@ -125,19 +125,6 @@ class TambahBarangController extends Controller
     return redirect()->route('tambah.barang')->with($notification);
   }//End Method
 
-  public function DeleteTambahBarang($id)
-  {
-    $tambah = TambahBarang::find($id);
-    if($tambah->photo_tambahbarang){
-      @unlink(public_path('tambah_image/'.$tambah->photo_tambahbarang));
-    }
-    $tambah->delete();
-    $notification = array(
-      'message' => 'Barang berhasil dihapus',
-      'alert-type' => 'success'
-    );
-    return redirect()->route('tambah.barang')->with($notification);
-  }
   public function TambahBarangexport()
   {
     return Excel::download(new TambahExport, 'tambah barang.xlsx');

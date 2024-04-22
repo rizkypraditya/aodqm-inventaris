@@ -169,7 +169,6 @@ Route::controller(MasukBarangController::class)->group(function(){
     Route::get('/admin/viewregister/{id}' , 'ViewRegister')->name('view.register');
     Route::get('/admin/editregister/{id}' , 'EditRegister')->name('edit.register');
     Route::post('/admin/updateregister/' , 'UpdateRegister')->name('update.register');
-    Route::get('/admin/deleteregister/{id}' , 'DeleteRegister')->name('delete.register');
     Route::get('masuk/barang/export/', 'MasukBarangexport')->name('masuk.barang.export');
 
   
@@ -183,7 +182,6 @@ Route::controller(TambahBarangController::class)->group(function(){
   Route::get('/admin/viewtambah/{id}' , 'ViewTambahBarang')->name('view.tambah');
   Route::get('/admin/edittambah/{id}' , 'EditTambahBarang')->name('edit.tambah');
   Route::post('/admin/updatetambah/' , 'UpdateTambah')->name('update.tambah');
-  Route::get('/admin/deletetambah/{id}' , 'DeleteTambahBarang')->name('delete.tambah');
   Route::get('tambah/barang/export/', 'TambahBarangexport')->name('tambah.barang.export');
 });
 
