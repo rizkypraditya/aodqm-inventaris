@@ -46,9 +46,6 @@
                   <a href="{{route ('edit.register', $item->id ) }}" type="button" class="btn btn-secondary btn-icon">
                     <i data-feather="edit" class="btn-icon-prepend"></i>
                   </a>
-                  <a href="{{route ('delete.register', ['id' => $item->id]) }}" type="button" class="btn btn-danger btn-icon" id="delete">
-                    <i data-feather="trash-2"></i>
-                  </a>
                 </td>
               </tr>
               @endforeach

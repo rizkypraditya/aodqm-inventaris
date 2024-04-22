@@ -45,9 +45,6 @@
                   <a href="{{route('edit.tambah',  ['id' => $item->id])}}" type="button" class="btn btn-secondary btn-icon">
                     <i data-feather="edit"></i>
                   </a>
-                  <a href="{{route('delete.tambah',  ['id' => $item->id])}}" type="button" class="btn btn-danger btn-icon" id="delete">
-                    <i data-feather="trash-2"></i>
-                  </a>
                 </td>
               </tr>
             @endforeach
